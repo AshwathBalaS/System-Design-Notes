@@ -237,7 +237,7 @@ As applications grow, several challenges arise. Bugs may appear over time as the
 
 Now let us discuss some important **software design principles** commonly asked in interviews.
 
-The first principle is **DRY – Don’t Repeat Yourself**. This principle states that you should not duplicate code. If the same logic is used multiple times, it should be written once and reused, usually by placing it inside a method.
+The first principle is DRY – Don’t Repeat Yourself. This principle states that you should not duplicate code. If the same logic is used multiple times, it should be written once and reused, usually by placing it inside a method.
 
 The next principle is **YAGNI – You Ain’t Gonna Need It**. This means you should not write code unless it is actually required. Writing unnecessary functionality in advance can lead to wasted effort and future rework.
 

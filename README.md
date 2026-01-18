@@ -3,6 +3,8 @@ This Repository contains my "System Design" Notes from Euron
 
 **I) System Design Introduction**
 
+**II) Low Level Design Introduction - What, Why, Goal, SOLID Design Principles**
+
 
 # **I) System Design Introduction**
 
@@ -177,3 +179,114 @@ So based on the type of application, you decide how much compute, storage, and n
 So if you talk about all of these things — computation, storage, and network — these are the foundation for any application. They help in processing the data, storing the data, and sharing the data over the internet effectively. All of these things must be planned before starting to work on any application.
 
 So that’s all we have completed in the first module of our system design. Now we are going to discuss more things in the next one. I’ll see you there. Till then, happy learning.
+
+# **II) Low Level Design Introduction - What, Why, Goal, SOLID Design Principles**
+
+Hello everyone. In today’s module, we are going to learn **Low-Level Design (LLD)**. First, I will explain what all topics we are going to cover as part of low-level design. In this particular module, we will be covering only one part, and the remaining portion will be covered in the next module.
+
+When we talk about low-level design, we broadly cover two major things. The first one is **design principles**, and the second one is **design patterns**. In today’s module, we will focus only on design principles.
+
+When you hear the term low-level design, there is nothing entirely new that we are learning. These concepts already exist, and we are simply understanding how to implement them correctly in order to achieve different design principles and design patterns. All of these ideas are things you have already studied as part of object-oriented programming (OOP).
+
+In system design, one of the most important goals is to ensure that the application we build is **future-proof**. What does future-proof mean? It means that if today we build one feature, and tomorrow we want to integrate a new feature, the existing feature should continue to work perfectly. Adding new functionality should not break existing logic.
+
+Future-proofing also means that the software we build today should remain usable months or even years down the line. When companies like Amazon or Facebook were created, they were not built with the intention of lasting only a few months. They were designed with a long-term vision, allowing them to scale massively over time. That is why we are still using these platforms today.
+
+Whenever we build an application, we must ensure it is flexible enough to adapt to changing requirements. If we want to add new features or enhancements in the future, the system should allow that without breaking existing functionality. If the existing system stops working, the new feature becomes useless.
+
+Whenever we talk about designing any system, we are essentially addressing real-world problems. In the real world, we deal with two main things: entities and relationships. For example, a person and a car are individual entities. There is no relationship between them until we say, “This is my car.” The moment we say that, a relationship is established.
+
+This idea of entities and relationships is something you have already learned in object-oriented programming. Using OOP, we try to model real-world entities and define relationships between them. This becomes extremely useful when designing applications.
+
+Whenever you are given a problem statement, your first approach should be to identify the different entities involved. The next step is to determine how these entities are related to each other. This is where object-oriented programming plays a key role.
+
+In OOP, we implement these ideas using **classes and objects**. We represent problem statements in the form of classes, and objects are used to interact with these classes. These are the building blocks of the object-oriented paradigm.
+
+A class acts as a template or blueprint. For example, if we create a `Person` class, it may have attributes like name, age, and gender. Similarly, a `Car` class may have attributes such as model number and color. Attributes describe the characteristics of an entity.
+
+However, attributes alone are not enough. We also define **methods** to describe behavior. A `Person` class may have methods like `eat()` or `sleep()`. A `Car` class may have methods like `start()` or `stop()`. Attributes define what an entity is, and methods define what it does.
+
+When defining a class, we specify the class name, its attributes, and its behaviors. This is how a class is represented in code.
+
+Now let us quickly revise the **core concepts of object-oriented programming**. There are four major concepts:
+
+1. Encapsulation – Wrapping data and methods together inside a class.
+2. Abstraction – Hiding unnecessary details and exposing only essential functionality. For example, when you withdraw money from an ATM, you don’t see how the cash is processed internally; you only interact with the interface.
+3. Polymorphism – The ability of the same function or operator to behave differently in different situations.
+4. Inheritance – Establishing a parent-child relationship where a child class can reuse properties of the parent class.
+
+Polymorphism can be of two types: **compile-time polymorphism** and **runtime polymorphism**. Compile-time polymorphism includes function overloading and operator overloading. Function overloading allows multiple functions with the same name but different parameters. Operator overloading allows operators like `+` to perform different tasks, such as addition or string concatenation.
+
+Runtime polymorphism is achieved through **method overriding**, where a child class provides its own implementation of a method defined in the parent class.
+
+Inheritance allows a child class to reuse properties and methods of a parent class. Access specifiers determine what can be accessed by the child. Inheritance can be single-level, multi-level, hierarchical, or multiple. Multiple inheritance is not supported in languages like Java or C#, but similar functionality can be achieved using interfaces.
+
+Now let us move on to **design principles**. The goal of design principles is to help us write code that is easy to extend, test, and maintain. These principles are not strict rules but guidelines that help avoid future problems.
+
+Design principles help ensure that systems remain flexible, scalable, and easy to work with. They reduce complexity and prevent unnecessary headaches as the system grows.
+
+When learning any concept, you should understand three things: **what it is**, **why it is needed**, and **how it is useful**. The same applies to design principles.
+
+Design principles are strategies that guide how we implement components, write clean code, and design system architecture. By following these principles, we save ourselves from future issues and build systems that are adaptable and maintainable.
+
+The purpose of teaching design principles is similar to traditional learning methods where individuals were trained not just with knowledge but with values and structure. In the same way, system design prepares developers to build meaningful, scalable, and long-lasting software systems.
+
+The goal of system design principles is to provide a strong foundation for building scalable, efficient, and user-friendly systems. These principles help create software that is easy to understand, customize, and extend in the future.
+
+As applications grow, several challenges arise. Bugs may appear over time as the system interacts with more components. Frequent changes become inevitable, and even simple tasks can require significant effort if the system is not designed properly. That is why domain knowledge and proper design become crucial.
+
+Now let us discuss some important **software design principles** commonly asked in interviews.
+
+The first principle is **DRY – Don’t Repeat Yourself**. This principle states that you should not duplicate code. If the same logic is used multiple times, it should be written once and reused, usually by placing it inside a method.
+
+The next principle is **YAGNI – You Ain’t Gonna Need It**. This means you should not write code unless it is actually required. Writing unnecessary functionality in advance can lead to wasted effort and future rework.
+
+The most important set of principles is **SOLID**, which is frequently asked in interviews.
+
+SOLID stands for:
+
+* S – Single Responsibility Principle (SRP)
+* O – Open/Closed Principle
+* L – Liskov Substitution Principle
+* I – Interface Segregation Principle
+* D – Dependency Inversion Principle
+
+Now let us begin with **Single Responsibility Principle (SRP)**. SRP states that **a class should have only one responsibility**. One class should do only one thing.
+
+The intention behind SRP is to avoid confusion and reduce complexity. Consider a hospital example. There are general physicians and specialists. A general physician handles common illnesses, while specialists handle serious or specific conditions. Each has a clear responsibility.
+
+Similarly, in software design, if a class tries to handle too many responsibilities, it becomes difficult to manage and maintain. A well-designed system clearly separates responsibilities across different classes.
+
+For example, people may own both a car and a boat. A car is meant for driving on roads, and a boat is meant for water. Even though one person may use both, their purposes are different. In the same way, software components should be designed to handle only their specific responsibilities.
+
+Following the Single Responsibility Principle helps create clean, understandable, and maintainable systems that can easily adapt to future changes.
+
+But what if somebody thinks that instead of having two different vehicles, why not have a single vehicle that can run both on roads and on water? At first glance it sounds smart, and technically such vehicles do exist. However, they are not very popular. The reason is tight coupling. When a single system is built to serve multiple functionalities—here, a car and a boat—both functionalities are tightly coupled together. If something goes wrong with the car-related functionality, you will not be able to use the boat-related functionality either, because they are part of the same tightly coupled system. When multiple components are combined into one system and one part fails, the failure spreads and impacts the entire system.
+
+Normally, to avoid this situation, we try to keep components separate. If the car and the boat were two different entities, then even if the car stopped working, you could still use the boat, and if the boat failed, you could still use the car. This separation ensures loose coupling, where failure in one component does not bring down the entire system.
+
+The same idea applies in software and even in daily life examples. Take a mouse and a keyboard. These days everything is USB controlled. From personal experience, there was an option to buy a mouse and a keyboard separately, which would occupy two USB ports. To save a USB port, there was also an option to buy a combo where both mouse and keyboard work with a single USB receiver. It feels like a smart decision, but later if that single USB receiver gets misplaced, neither the mouse nor the keyboard will work. If they had been bought separately, even after losing one USB, at least one device would still work. This happens because both devices were tightly coupled through a single USB. If they were separate, they would be loosely coupled, and failure of one would not impact the other.
+
+Now let us move to a software example. Suppose we have an Employee class with attributes such as id, name, and date of joining. A constructor initializes these values. Inside the same class, we also define behaviors such as calculateSalary, hireEmployee, and evaluateEmployee. In addition, we have getters and setters for id, name, and date of joining. In the main method, we create an Employee object, assign an id, a name, and the current date, and then use getter methods to retrieve these values. We also call methods like hireEmployee, calculateSalary, and evaluateEmployee.
+
+At first glance, this may look fine and may even appear to follow the single responsibility principle. However, the number of methods does not define single responsibility. Single responsibility means that a class should be changed or impacted for only one reason, by only one actor. In this Employee class, calculateSalary belongs to the finance team, hiring belongs to HR, and evaluation belongs to managers. Although everything is placed in a single class, changes are being driven by multiple actors. Finance, HR, and managers may all need to modify this class for their own reasons. Because of this, a change made by one team can unintentionally impact others.
+
+For example, if the finance team changes the tax slab logic, the calculateSalary method changes. Even though HR and managers are not involved, the entire Employee class must be redeployed. During that deployment, HR-related or evaluation-related functionality is also affected, even though no changes were made there. This makes the class tightly coupled and fat, which is bad both for design and maintainability. Single responsibility does not mean one method per class; it means one reason to change. Since this class has multiple reasons to change, it violates the single responsibility principle.
+
+To fix this, the code can be refactored by separating responsibilities into different classes. The Employee class should only contain employee-related data such as id, name, and date of joining. Salary calculation can be moved into a SalaryCalculator class, which is handled by the finance team. Employee evaluation can be moved into an EmployeeEvaluator class, handled by managers. Hiring logic can be moved into an EmployeeHiring class, handled by HR. Now each class has only one actor responsible for changes. If finance changes salary logic, only SalaryCalculator changes. HR and managers are unaffected. This ensures loose coupling and adherence to the single responsibility principle. A class should change only for one reason, even if it contains multiple methods.
+
+Next comes the open–closed principle. This principle says that software entities should be open for extension but closed for modification. In simple terms, we should be able to add new features without changing existing code. For example, suppose we build an AnimalFeeder application that initially feeds dogs. Later, we want to add support for cats. If we modify the existing AnimalFeeder class every time we add a new animal, this approach will not scale. Even though it may work without compile-time or runtime errors, it is a poor design.
+
+To solve this, we use interfaces. We define an Animal interface with a feed method. Then we create separate classes like Dog and Cat that implement this interface and provide their own feed logic. The AnimalFeeder class depends only on the Animal abstraction, not on concrete implementations. When a new animal such as Tiger is added, we simply create a new class that implements Animal. The AnimalFeeder class does not change at all. In this way, the system is open for extension but closed for modification.
+
+The Liskov Substitution Principle builds on this idea. It says that a derived class should be substitutable for its base class without altering the correctness of the program. In other words, wherever a parent class is expected, a child class should be usable without changing behavior. Just satisfying an “is-a” relationship is not enough. The child must fully honor the behavior expected from the parent.
+
+Consider a Cat class with methods like drinkMilk and makeSound. A PetCat can correctly implement both. But a ToyCat, which is mechanical, cannot drink milk. If ToyCat extends Cat and throws an exception in drinkMilk, it violates the Liskov Substitution Principle. Even though ToyCat is a Cat by inheritance, it cannot behave like a real Cat in all situations.
+
+This leads to the Interface Segregation Principle. This principle says that interfaces should be small and focused, and no class should be forced to implement methods it does not use. Instead of having a single fat interface with many methods, we should split it into multiple smaller interfaces. For example, we can have a MechanicalCat interface with only makeSound, and a LivingCat interface that includes both makeSound and drinkMilk. A toy cat implements MechanicalCat, while a real cat implements LivingCat. This avoids forcing classes to implement irrelevant methods and prevents Liskov violations.
+
+Finally, the Dependency Inversion Principle states that high-level modules should not depend on low-level modules. Both should depend on abstractions. Also, abstractions should not depend on details; details should depend on abstractions. When high-level classes directly depend on low-level implementations, the system becomes tightly coupled. Any change in low-level code can break high-level code.
+
+A simple analogy is an organizational hierarchy. A CEO does not directly deal with employees. Communication flows through managers, directors, and VPs. This layered structure reduces dependency and makes the system stable. Similarly, in software, high-level logic should depend on interfaces or abstractions, not concrete classes. This keeps the system loosely coupled, flexible, and easier to extend.
+
+All five SOLID principles are interrelated. Violating one often leads to violations of others. Together, they help us design systems that are flexible, maintainable, scalable, and resilient to change.
